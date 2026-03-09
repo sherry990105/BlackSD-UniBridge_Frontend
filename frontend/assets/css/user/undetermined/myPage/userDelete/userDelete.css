@@ -13,7 +13,7 @@ body {
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
-    margin-top: 30px;
+    margin-top: 40px;
     gap: 30px;
     padding: 40px 50px;
     min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
@@ -31,7 +31,7 @@ aside {
     background-color: #eef2ff;
     border-radius: 20px;
     padding: 28px 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     margin-top: 25px;
 }
 
@@ -155,9 +155,9 @@ main {
 }
 
 .input-group {
-    display: flex;           /* 가로 나열 */
-    align-items: center;     /* 세로축 중앙 */
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* 에러 메시지와의 간격 */
 }
 
 label {
@@ -209,4 +209,34 @@ input {
 
 .userModify:hover {
     background-color: #c7d2fe;
+}
+
+.error-msg {
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 150px; /* Label 너비와 동일하게 맞춰 정렬 */
+    height: 20px; /* 공간 확보 */
+}
+
+.input-group-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* 기존 input-group의 margin-bottom 대신 사용 */
+}
+
+/* 탈퇴 버튼 비활성화 상태 */
+.userDelete:disabled {
+    background-color: #f5f5f5;
+    color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 탈퇴 버튼 활성화 상태 */
+.userDelete:not(:disabled) {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
 }

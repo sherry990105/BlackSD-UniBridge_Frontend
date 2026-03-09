@@ -1,148 +1,64 @@
-// 실제 서버 검증 대신 임시 더미 데이터
-const VALID_ID = "hongdong11";
-const VALID_PW = "password123";
-const VALID_PHONE_CODE = "123456"; // 실제 환경에선 서버에서 발급
-
-let idPassed       = false;
-let pwPassed       = false;
-let phoneSent      = false;
-let codeVerified   = false;
-
-// ── 헬퍼 ──
-function showError(errorEl, msg) {
-    errorEl.textContent = msg;
-    updateDeleteBtn();
-}
-
-function clearError(errorEl) {
-    errorEl.textContent = "";
-    updateDeleteBtn();
-}
-
-function setBtn(btn, enabled) {
-    if (!btn) return;
-    btn.disabled      = !enabled;
-    btn.style.opacity = enabled ? "1" : "0.5";
-    btn.style.cursor  = enabled ? "pointer" : "not-allowed";
-}
-
-function updateDeleteBtn() {
-    const deleteBtn = document.querySelector(".userDelete");
-    const canSubmit = idPassed && pwPassed && codeVerified;
-    setBtn(deleteBtn, canSubmit);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+    const deleteForm = document.getElementById("delete");
+    const userId = document.getElementById("userId");
+    const userPw = document.getElementById("userPw");
+    const userPhone = document.getElementById("userPhone");
+    const authCode = document.getElementById("authCode");
+    const submitBtn = document.getElementById("submitBtn");
+    
+    const loginError = document.getElementById("login-error");
+    const authError = document.getElementById("auth-error");
+    const verifyBtn = document.getElementById("verifySms");
 
-    const inputId    = document.getElementById("inputId");
-    const inputPw    = document.getElementById("inputPw");
-    const inputPhone = document.getElementById("inputPhone");
-    const inputCode  = document.getElementById("inputCode");
-    const sendBtn    = document.getElementById("sendBtn");
-    const verifyBtn  = document.getElementById("verifyBtn");
-    const deleteBtn  = document.querySelector(".userDelete");
+    // 테스트용 데이터
+    const TEST_ID = "test";
+    const TEST_PW = "1234";
+    const TEST_AUTH = "12345";
 
-    const idError    = document.getElementById("idError");
-    const pwError    = document.getElementById("pwError");
-    const phoneError = document.getElementById("phoneError");
-    const codeError  = document.getElementById("codeError");
+    let isAuthVerified = false; // 인증 성공 여부
 
-    // 초기 버튼 비활성화
-    setBtn(deleteBtn, false);
-    setBtn(verifyBtn, false);
+    // 모든 입력 필드와 인증 여부를 확인하여 버튼 활성화
+    const validateForm = () => {
+        const allFilled = userId.value.trim() !== "" && 
+                          userPw.value.trim() !== "" && 
+                          userPhone.value.trim() !== "" && 
+                          authCode.value.trim() !== "";
+        
+        submitBtn.disabled = !(allFilled && isAuthVerified);
+    };
 
-    // ── 아이디 입력 시 실시간 초기화 ──
-    inputId.addEventListener("input", () => {
-        idPassed = false;
-        clearError(idError);
+    // 실시간 입력 감지
+    [userId, userPw, userPhone, authCode].forEach(input => {
+        input.addEventListener("input", validateForm);
     });
 
-    // ── 비밀번호 입력 시 실시간 초기화 ──
-    inputPw.addEventListener("input", () => {
-        pwPassed = false;
-        clearError(pwError);
-    });
-
-    // ── 인증번호 전송 버튼 ──
-    sendBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const phone = inputPhone.value.trim();
-        const phoneRegex = /^01[016789]\d{7,8}$/;
-
-        if (!phone) {
-            showError(phoneError, "전화번호를 입력해주세요.");
-            return;
-        }
-        if (!phoneRegex.test(phone)) {
-            showError(phoneError, "올바른 전화번호 형식이 아닙니다.");
-            return;
-        }
-
-        // 성공: 인증번호 전송 처리
-        clearError(phoneError);
-        phoneSent = true;
-        setBtn(verifyBtn, true);
-        showError(phoneError, ""); 
-        phoneError.style.color = "blue";
-        phoneError.textContent = "인증번호가 전송되었습니다.";
-        setTimeout(() => {
-            phoneError.textContent = "";
-            phoneError.style.color = "red";
-        }, 3000);
-    });
-
-    // ── 인증 확인 버튼 ──
-    verifyBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (!phoneSent) {
-            showError(codeError, "먼저 인증번호를 전송해주세요.");
-            return;
-        }
-        if (inputCode.value.trim() !== VALID_PHONE_CODE) {
-            showError(codeError, "인증번호가 일치하지 않습니다.");
-            codeVerified = false;
+    // 인증 확인 버튼 클릭
+    verifyBtn.addEventListener("click", () => {
+        if (authCode.value === TEST_AUTH) {
+            authError.textContent = ""; // 메시지 삭제
+            isAuthVerified = true;
+            alert("인증에 성공하였습니다.");
+            authCode.readOnly = true; // 인증 성공 시 수정 불가 처리 (선택사항)
         } else {
-            clearError(codeError);
-            codeVerified = true;
+            authError.textContent = "인증번호가 일치하지 않습니다.";
+            isAuthVerified = false;
         }
-        updateDeleteBtn();
+        validateForm();
     });
 
-    inputCode.addEventListener("input", () => {
-        codeVerified = false;
-        clearError(codeError);
-    });
-
-    // ── 탈퇴 신청 버튼 (제출 시 아이디/비밀번호 검증) ──
-    deleteBtn.addEventListener("click", (e) => {
+    // 탈퇴 신청 버튼 클릭 (최종 제출)
+    deleteForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        let valid = true;
-
-        // 아이디 확인
-        if (inputId.value.trim() !== VALID_ID) {
-            showError(idError, "정보가 맞지 않습니다. 다시 확인해주세요.");
-            idPassed = false;
-            valid = false;
+        
+        // 아이디 및 비밀번호 검증
+        if (userId.value === TEST_ID && userPw.value === TEST_PW) {
+            loginError.textContent = "";
+            if(confirm("정말로 탈퇴하시겠습니까?")) {
+                alert("탈퇴 신청이 완료되었습니다.");
+                // 실제 탈퇴 로직(서버 전송 등) 실행
+            }
         } else {
-            clearError(idError);
-            idPassed = true;
-        }
-
-        // 비밀번호 확인
-        if (inputPw.value !== VALID_PW) {
-            showError(pwError, "정보가 맞지 않습니다. 다시 확인해주세요.");
-            pwPassed = false;
-            valid = false;
-        } else {
-            clearError(pwError);
-            pwPassed = true;
-        }
-
-        updateDeleteBtn();
-
-        if (valid && codeVerified) {
-            // form.submit(); // 실제 제출 시 활성화
-            alert("탈퇴 신청이 완료되었습니다.");
+            loginError.textContent = "정보가 맞지 않습니다. 다시 확인해주세요.";
         }
     });
 });
