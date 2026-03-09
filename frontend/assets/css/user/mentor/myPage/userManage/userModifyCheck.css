@@ -174,7 +174,7 @@ input {
 
 .duplication{
     margin-left: 10px;
-    width: 15%;
+    width: 20%;
     padding: 10px;
     background-color: white;
     border: 1px solid black;
@@ -186,7 +186,7 @@ input {
 
 .spacer {
     margin-left: 10px;
-    width: 15%; /* .duplication 버튼과 동일한 너비 */
+    width: 20%; /* .duplication 버튼과 동일한 너비 */
 }
 
 /* 수정 버튼 우측 하단 absolute */

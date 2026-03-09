@@ -160,16 +160,6 @@ main {
     box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
 }
 
-/* .userTypeBox{
-    padding: 15px;
-    margin-top: 30px;
-    width: 60%;
-    height: 60%;
-    background-color: #eef2ff;
-    border: 1px solid #eef2ff;
-    border-radius: 12px
-} */
-
 .mentoring{
     width: 100%;
     max-width: 800px;
@@ -226,4 +216,153 @@ main {
 
 .matchingCancel:hover {
     background-color: #c7d2fe;
+}
+
+.mentoringCheck:hover {
+    background-color: #c7d2fe;
+}
+
+/* 모달 기능 */
+/* 모달 배경 (어둡게) */
+.matingCancel {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은 배경 */
+}
+
+/* 모달 박스 */
+.cancelBox {
+    background-color: white;
+    margin: 3% auto; /* 상단 여백 및 가로 중앙 정렬 */
+    padding: 30px;
+    width: 500px;
+    height: 80%;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* 닫기 버튼 스타일 */
+.closeBtn {
+    position: absolute;  /* 부모인 .modal-content를 기준으로 절대 위치 */
+    top: 20px;          /* 위에서 20px 내림 */
+    right: 20px;        /* 오른쪽에서 20px 당김 */
+    
+    border: none;
+    outline: none;
+    background-color: transparent; /* 배경을 투명하게 해서 깔끔하게 */
+    cursor: pointer;
+    z-index: 10;        /* 다른 요소보다 위에 보이도록 설정 */
+}
+
+/* 이미지 크기 조절 (필요한 경우) */
+.closeBtn img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.cacelTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 20px;     /* 제목과 입력창 사이 간격 */
+    text-align: center;
+}
+
+.cancelModalBox {
+    background-color: white;
+    padding: 30px 40px;
+    height: 85%;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 100%;
+    display: flex; /* 내부 요소 정렬을 위해 flex 추가 */
+    flex-direction: column;
+}
+
+.cancelModalBox form {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 부모 높이를 다 채워서 버튼을 바닥으로 보냄 */
+}
+
+/* 2. 상단 2x2 그리드 (오타 수정: info-grid -> infoGrid) */
+.infoGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 정확히 반반 나눔 */
+    gap: 15px 10px; 
+    margin-bottom: 20px;
+}
+
+.printRow {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.printRow label {
+    width: 70px; /* 라벨 너비 고정 */
+    color: #666;
+    font-weight: 500;
+}
+
+.mentoringText {
+    font-weight: 700;
+    color: #333;
+}
+
+/* 3. 취소 사유 입력창 영역 */
+.cencelInputBox {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 남은 공간을 이 박스가 다 차지하게 함 */
+    margin-bottom: 20px;
+}
+
+.contextTitle {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.cencelIput {
+    width: 100%;
+    flex-grow: 1; /* 부모인 inputBox의 남은 높이를 꽉 채움 */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: none; /* 사용자 임의 크기조절 금지 */
+    outline: none;
+    font-family: inherit;
+}
+
+/* 4. 버튼 우측 하단 정렬 */
+.cancelFooter {
+    display: flex;
+    justify-content: flex-end; /* 우측 정렬 */
+    gap: 12px;
+    margin-top: auto; /* 위쪽 여백을 자동으로 밀어내어 바닥에 고정 */
+}
+
+.submitBtn, .cancelBtn {
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    border-radius: 12px; /* 사진처럼 더 둥글게 */
+    background-color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover, .cancelBtn:hover {
+    background-color: #f5f7ff;
+    border-color: #4f73e3;
+    color: #4f73e3;
 }

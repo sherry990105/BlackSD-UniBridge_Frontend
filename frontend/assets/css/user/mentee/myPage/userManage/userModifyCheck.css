@@ -10,12 +10,6 @@ body {
     font-family: 'NanumSquareRound', sans-serif; 
 }
 
-header {
-    padding: 16px 50px;
-    background-color: white;
-    border-bottom: 1px solid #e0e6ed;
-}
-
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
@@ -32,12 +26,13 @@ a {
 /* 사이드바 스타일 */
 aside {
     width: 220px;
-    height: 800px;
+    height: 700px;
     margin-left: 30px;
     background-color: #eef2ff;
     border-radius: 20px;
     padding: 28px 20px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-top: 25px;
 }
 
 .myPageTitle {
@@ -174,7 +169,7 @@ input {
 
 .duplication{
     margin-left: 10px;
-    width: 15%;
+    width: 20%;
     padding: 10px;
     background-color: white;
     border: 1px solid black;
@@ -186,7 +181,7 @@ input {
 
 .spacer {
     margin-left: 10px;
-    width: 15%; /* .duplication 버튼과 동일한 너비 */
+    width: 20%; /* .duplication 버튼과 동일한 너비 */
 }
 
 /* 수정 버튼 우측 하단 absolute */

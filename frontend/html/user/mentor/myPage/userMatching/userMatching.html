@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멘토 매칭 정보</title>
     <link rel="stylesheet" href="../../../../../assets/css/user/mentor/myPage/userMatching/userMatching.css">
+    <script defer src="../../../../../assets/js/user/mentor/myPage/userMatching/userMatching.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
                 <li><a href="../myPage.html" >계정 관리</a></li>
                 <li><a href="../userSurvey/userSurvey.html">설문 조사</a></li>
                 <li><a href="userMatching.html" class="active">매칭 정보</a></li>
-                <li><a href="../userMentoCreate/mentoring.html">멘토링</a></li>
+                <li><a href="../userMentoCreate/mentoringView.html">멘토링</a></li>
                 <li><a href="../userDelete/userDelete.html">회원 탈퇴</a></li>
             </ul>
         </aside>
@@ -26,7 +27,8 @@
                 <img src="../../../../../assets/img/user/userProfile/matching.png" alt="프로필 아이콘">
                 <div class="title">매칭 정보</div>
             </div>
-            <div class="container"> <div class="userTypeBox">
+            <div class="container"> 
+                <div class="userTypeBox">
                     <div class="mentoring">
                         <div class="userText">
                             <label>멘토 이름</label>
@@ -49,7 +51,45 @@
                             <button class="mentoringCheck">학습보고서 확인</button>
                         </div>
                     </div>
-                    <button type="submit" class="matchingCancel">매칭 취소 신청</button>
+                    <button type="submit" class="matchingCancel" id="openModalBtn">매칭 취소 신청</button>
+                </div>
+            </div>
+            <div id="matchingModal" class="matingCancel">
+                <div class="cancelBox">
+                    <button class="closeBtn"><img src="../../../../../assets/img/user/userProfile/close.png" alt=""></button>
+                    <div class="cacelTitle">매칭 취소 신청서</div>
+                    <div class="cancelModalBox">
+                        <form>
+                            <div class="infoGrid">
+                                <div class="printRow">
+                                    <label>멘토 이름</label>
+                                    <div class="mentoringText">홍길동</div>
+                                </div>
+                                <div class="printRow">
+                                    <label>멘티 이름</label>
+                                    <div class="mentoringText">장발장</div>
+                                </div>
+                                <div class="printRow">
+                                    <label>멘토링 과목</label>
+                                    <div class="mentoringText">Java</div>
+                                </div>
+                                <div class="printRow">
+                                    <label>시작일</label>
+                                    <div class="mentoringText">2025/02/28</div>
+                                </div>
+                            </div>
+
+                            <div class="cencelInputBox">
+                                <div class="contextTitle">매칭취소 사유</div>
+                                <textarea class="cencelIput"></textarea>
+                            </div>
+
+                            <div class="cancelFooter">
+                                <button type="button" class="submitBtn" id="sumbitBtn">취소 신청</button>
+                                <button type="button" class="cancelBtn" id="closeModalBtn">취소</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>

@@ -10,12 +10,6 @@ body {
     font-family: 'NanumSquareRound', sans-serif;
 }
 
-header {
-    padding: 16px 50px;
-    background-color: white;
-    border-bottom: 1px solid #e0e6ed;
-}
-
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
@@ -32,7 +26,7 @@ a {
 /* 사이드바 스타일 */
 aside {
     width: 220px;
-    height: 800px;
+    height: 700px;
     margin-left: 30px;
     background-color: #eef2ff;
     border-radius: 20px;
@@ -48,6 +42,7 @@ aside {
     padding-bottom: 14px;
     border-bottom: 2px solid #dde3f0;
     margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 /* 사이드바 리스트 초기화 */
