@@ -92,3 +92,11 @@ a{
     color: #333;
     cursor: pointer;
 }
+
+.error{
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: left;
+}

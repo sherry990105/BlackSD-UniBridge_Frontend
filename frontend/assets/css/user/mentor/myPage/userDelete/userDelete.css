@@ -210,3 +210,14 @@ input {
 .userModify:hover {
     background-color: #c7d2fe;
 }
+
+.error-msg {
+    flex-basis: 100%;
+    order: 99;
+    color: red;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-left: 150px; /* label width와 동일하게 */
+    min-height: 18px;
+}

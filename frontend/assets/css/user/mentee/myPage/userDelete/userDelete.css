@@ -13,7 +13,7 @@ body {
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
-    margin-top: 30px;
+    margin-top: 40px;
     gap: 30px;
     padding: 40px 50px;
     min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
@@ -31,7 +31,7 @@ aside {
     background-color: #eef2ff;
     border-radius: 20px;
     padding: 28px 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     margin-top: 25px;
 }
 
@@ -209,4 +209,15 @@ input {
 
 .userModify:hover {
     background-color: #c7d2fe;
+}
+
+.error-msg {
+    flex-basis: 100%;
+    order: 99;
+    color: red;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-left: 150px; /* label width와 동일하게 */
+    min-height: 18px;
 }

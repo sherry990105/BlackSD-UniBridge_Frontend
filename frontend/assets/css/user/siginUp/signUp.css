@@ -40,6 +40,8 @@ main{
     text-align: center;
     width: auto;             /* 50% 보다는 내용물에 맞게 */
     min-width: 450px;        /* 최소 너비 지정 */
+    max-width: 450px;
+    max-height: 700px;
 }
 
 .signUpText {
@@ -49,8 +51,9 @@ main{
 }
 
 .input-group {
-    display: flex;           /* 가로 나열 */
-    align-items: center;     /* 세로축 중앙 */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;         /* ← 이 줄 추가 */
     margin-bottom: 20px;
 }
 
@@ -94,4 +97,18 @@ input {
 .spacer {
     margin-left: 10px;
     width: 20%; /* .duplication 버튼과 동일한 너비 */
+}
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    flex-basis: 100%;        /* 한 줄 전체 차지 → 아래로 내려감 */
+    margin-left: 100px;      /* label 너비(100px)만큼 들여쓰기 */
+    margin-top: 1px;
+    order: 99;               /* flex 순서상 맨 마지막 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

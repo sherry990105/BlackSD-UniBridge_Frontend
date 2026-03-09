@@ -168,6 +168,7 @@ main {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 label {
@@ -221,4 +222,13 @@ input {
 
 .userModify:hover {
     background-color: #c7d2fe;
+}
+
+.error-msg {
+    flex-basis: 100%;
+    order: 99;
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 2px;
 }

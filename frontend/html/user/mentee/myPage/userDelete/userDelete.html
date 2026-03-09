@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../../../../../assets/css/header.css" />
+    <script defer src="/assets/js/user/mentee/myPage/userDelete/userDelete.js"></script>
 </head>
 <body>
     <header class="headerWrap">
@@ -74,6 +75,7 @@
                         <label>비밀번호</label>
                         <input type="password" class="userInput">
                         <div class="spacer"></div>
+                        <div class="error-msg" id="idError"></div>
                     </div>
 
                     <div class="input-group">
@@ -86,6 +88,7 @@
                         <label>인증번호</label>
                         <input type="text" class="userInput">
                         <button class="duplication">인증 확인</button>
+                        <div class="error-msg" id="idError"></div>
                     </div>
 
                     <button type="submit" class="userDelete">탈퇴 신청</button>
