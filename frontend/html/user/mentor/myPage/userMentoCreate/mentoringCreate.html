@@ -4,37 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>멘토링 생성</title>
-  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
-  <link rel="stylesheet" href="/frontend/assets/css/user/mentor/myPage/userMentoCreate/mentoringCreate.css">
+  <link href="/frontend/assets/css/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/assets/css/user/mentor/myPage/userMentoCreate/mentoring.css">
+  <script defer src="/frontend/assets/js/user/mentor/myPage/userMentoCreate/mentoringCreate.js"></script>
   <link rel="stylesheet" href="/frontend/assets/css/header.css">
   <link rel="stylesheet" href="/frontend/assets/css/footer.css">
+  <script defer src="/frontend/assets/js/header.js"></script>
+  <script src="/frontend/assets/js/footer.js"></script>
 </head>
 <body>
   <header>
-    <iframe src="/frontend/header/mentorHeader.html" height="56px" width="100%"></iframe>
+    <div id="headerContainer"></div>
   </header>
   <main>
-    <div id = "sidebarArea">
-      <div id="sidebar">
-        <div class="title">마이페이지</div>
-        <hr>
-        <nav id="sidebarNav">
-          <ul>
-            <li><a href="#">계정 관리</a></li>
-            <li><a href="">설문 조사</a></li>
-            <li><a href="">계정 정보</a></li>
-            <li><a href="">매칭 정보</a></li>
-            <li><a href="">회원 탈퇴</a></li>         
-            <li id = "locate"><a href="">멘토링</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <form method="get" action="">
+    <aside id="sidebarArea">
+      <div class="myPageTitle">마이페이지</div>
+      <ul>
+        <li><a href="/frontend/html/user/mentor/myPage/myPage.html">계정 관리</a></li>
+        <li><a href="/frontend/html/user/mentor/myPage/userSurvey/userSurvey.html">설문 조사</a></li>
+        <li><a href="/frontend/html/user/mentor/myPage/userMatching/userMatching.html">매칭 정보</a></li>
+        <li><a href="" class="active">멘토링</a></li>
+        <li><a href="/frontend/html/user/mentor/myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
+      </ul>
+    </aside>
+    <form method="get" action="" >
       <div id = contents>
-        <div id = contentsHeader>
-          <img src="/frontend/assets/img/user/userMyPageImg/userMentoring.jpg" alt="멘토링 관리 아이콘">
-          <span>멘토링 관리</span>
+        <div id="contentsHeader">
+          <div class="mentoringTitle">
+            <img src="/frontend/assets/img/user/userMyPageImg/userMentoring.jpg" alt="멘토링 관리 아이콘">
+            <div class="mentoringTitleText">멘토링 관리</div>
+          </div>
         </div>
         <div id = contentsMain>
           <div id = mentoringBackground>
@@ -84,8 +83,9 @@
                   </div>
                 </div>
               </div>
+
               <div id = profile>
-                <a href="">
+                <a href="/frontend/html/user/mentor/myPage/myPage.html">
                   <img src="/frontend/assets/img/user/userMyPageImg/userManage.jpg" alt="계정관리 아이콘">
                   <div id = "manage">계정관리</div>
                 </a>
@@ -101,7 +101,7 @@
     </form>
   </main>
   <footer>
-    <iframe src="/frontend/footer/footer.html" height="205px" width="100%"></iframe>
+    <iframe src="/frontend/footer/footer.html" height="" width="100%"></iframe>
   </footer>
 </body>
 </html>

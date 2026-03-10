@@ -1,7 +1,11 @@
 *{
   margin : 0px;
   padding : 0px;
-  font-family: "NanumSquareRoundBold", sans-serif;
+  font-family: NanumSquareRound
+}
+
+main{
+  padding-top : 100px;
 }
 
 nav ul{
@@ -53,6 +57,7 @@ nav ul li{
 
 .mentoList{
   size : 300px;
+  margin-bottom : 50px;
   display : flex;
   justify-content:space-between;
 }

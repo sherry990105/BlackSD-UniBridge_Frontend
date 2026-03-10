@@ -1,0 +1,329 @@
+*{
+  margin : 0px;
+  padding : 0px;
+  box-sizing: border-box;
+  font-family: NanumSquareRoundBold
+}
+
+#headerContainer{
+  width:1920px;
+  height: 100px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.error{
+  font-weight: bold;
+  color: red;
+  font-size: 10px;
+  margin-left: 10px;
+  display: none;
+}
+
+a:link, a:visited{
+  text-decoration: none;
+  color : #888;
+}
+
+a:hover{
+  color : #4f73e3;
+}
+
+header {
+  height : 56px;
+  width : 100%;
+  position: sticky;
+  z-index: 11;
+  top: 0px;
+}
+
+main{
+  width : 100%;
+  height : auto;
+  min-height: 900px;
+  display: flex;
+  gap: 30px;
+  padding: 40px 50px;
+}
+
+#sidebarArea {
+  width: 220px;
+  height: 750px;
+  margin-left: 30px;
+  margin-top: 8px;
+  background-color: #eef2ff;
+  border-radius: 20px;
+  padding: 28px 20px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.myPageTitle {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #222;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #dde3f0;
+  margin-bottom: 20px;
+}
+
+#sidebarArea ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebarArea ul li {
+  margin-bottom : 10px;
+}
+
+#sidebarArea ul li a {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  color: #888;
+  text-align: center;
+}
+
+#sidebarArea ul li a.active {
+  color: #4f73e3;
+  font-weight: 700;
+}
+
+#contentsHeader {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.mentoringTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 145px;
+}
+
+.mentoringTitle img {
+  margin-top: 30px;
+  width: 36px;
+  height: 36px;
+}
+
+.mentoringTitleText {
+  font-size: 30px;
+  font-weight: 500;
+  color: #222;
+  margin-top: 30px;
+}
+
+label[for="mentoringCurriculum"]{
+  font-weight: bold;
+}
+
+#contents{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#contentsMain{
+  width : 100%;
+  height : auto;
+}
+
+#mentoringBackground{
+  border: 1px solid #D9E2F0;
+  height : auto;
+  width : calc(100% - 155px);
+  margin-top: 18px;
+  margin-left: 145px;
+  background: linear-gradient(#F8FBFF,#FDFEFF);
+  border-radius: 12px;
+  display : flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+#mentoringMain{
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#mentoringTopics{
+  border: 1px solid #D9E2F0;
+  border-radius: 12px;
+  background: linear-gradient(#FFFFFF,#F8FBFF)
+}
+
+#mentoringTopics, #profile{
+  margin-top : 24px;
+  margin-left : 14px;
+}
+
+#mentoringTopics{
+  height: 170px;
+  width : 560px;
+}
+
+#mentoringTopics .subject, #mentoringTopics .title{
+  height: 33px;
+  display : flex;
+  align-items: center;
+  margin-left : 14px;
+}
+
+label[for="mentoringCurriculum"]{
+  font-weight: bold;
+}
+
+#mentoringTopics div label{
+  font-size : 11px;
+  width : 60px;
+}
+
+#mentoringTopics div input[type="text"]{
+  width : 185px;
+  height : 24px;
+  border-radius: 12px;
+  border: 1px solid #D9E2F0;
+  padding-left: 12px;
+}
+
+#mentoringTopics div select{
+  width : 185px;
+  height : 24px;
+  border-radius: 12px;
+  border: 1px solid #D9E2F0;
+  padding-left: 12px;
+  font-size : 11px;
+}
+
+#mentoringTopics #purpose{
+  height : 68px;
+  display : flex;
+  padding-left : 14px;
+  padding-top : 4px;
+}
+
+#mentoringTopics textarea{
+  width : 390px;
+  height : 57px;
+  border: 1px solid #D9E2F0;
+  border-radius: 12px;
+  resize : none;
+  padding-left: 12px;
+  padding-top : 7px;
+}
+
+#curriculum{
+  border: 1px solid #D9E2F0;
+  border-radius: 12px;
+  margin-top : 12px;
+  margin-left : 14px;
+  padding-top : 14px;
+  padding-left: 14px;
+  display : flex;
+  flex-direction: column;
+}
+
+#curriculum #text{
+  display : flex;
+  flex-direction: column;
+}
+
+#curriculum #text > div{
+  display : flex;
+  align-items:center;
+}
+
+#curriculum #text textarea{
+  margin-top: 14px;
+  padding: 14px;
+  width : 508px;
+  height : 298px;
+  border: 1px solid #D9E2F0;
+  border-radius: 12px;
+  resize : none;
+}
+
+#curriculum #file{
+  padding-bottom: 14px;
+}
+
+#curriculum #file #curriculumFileTitle{
+  font-size: 12px;
+  padding: 14px 0px 7px 0px;
+}
+
+#curriculum #file #curriculumFile{
+  border: 1px solid black;
+  width: 266px;
+  padding : 7px;
+}
+
+#profile{
+  width: 347px;
+}
+
+#profile a{
+  display: flex;
+  margin-right: 120px;
+}
+
+#manage{
+  font-size: 26px;
+  color: black;
+}
+
+#profile a > img{
+  margin-top: 5px;
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+#profile a > #profileImg{
+  width: 300px;
+  height:300px;
+}
+
+#buttons{
+  margin-top : 10px;
+  height : 35px;
+  width : 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#buttons button{
+  margin-left : 20px;
+  font-size : 13px;
+  height : 30px;
+  width : 80px;
+  border-radius: 12px;
+  background-color: white;
+  border-color: #D9E2F0;
+}
+
+#buttons button[type="reset"]{
+  color: #475569;
+  font-weight: bold;
+}
+
+#buttons button[type="submit"]{
+  color: #2F6FED;
+  font-weight: bold;
+}
+
+
+
+footer{
+  height : 204px;
+}

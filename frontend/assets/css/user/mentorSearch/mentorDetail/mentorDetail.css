@@ -1,6 +1,7 @@
 *{
-  padding:0px;
-  margin: 0px;
+  margin : 0px;
+  padding : 0px;
+  font-family: NanumSquareRound
 }
 
 main{
@@ -22,7 +23,7 @@ main{
   justify-content: space-between;
 }
 
-img{
+#profileImg{
   height : 422px;
   width: 422px;
   border-radius: 100%;

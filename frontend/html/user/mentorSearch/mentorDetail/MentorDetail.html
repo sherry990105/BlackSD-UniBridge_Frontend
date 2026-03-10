@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>멘토 상세 검색</title>
   <link rel="stylesheet" href="/frontend/assets/css/user/mentorSearch/mentorDetail/mentorDetail.css">
+  <script defer src="/frontend/assets/js/user/mentorSearch/mentorDetail/mentorDetail.js"></script>
+  <link href="/frontend/assets/css/fonts.css" rel="stylesheet">
   <link rel="stylesheet" href="/frontend/assets/css/header.css">
-  <link rel="stylesheet" href="/frontend/assets/css/footer.css">
-  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <script defer src="/frontend/assets/js/header.js"></script>
+  <script src="/frontend/assets/js/footer.js"></script>
 </head>
 <body>
   <header>
-    <iframe src="/frontend/header/menteeHeader.html" height="57px" width="100%"></iframe>
+    <div id="headerContainer"></div>
   </header>
 
   <main>
     <div id="mentorDetail">
         <div id="detailHead">
-          <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="사진">
+          <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="사진" id="profileImg">
           <div id="mentoExplan">
             <div class="mentoSpec">
               <div id="mentoName">아무개</div>
@@ -58,13 +61,13 @@
           <div>결제금액</div>
           <div>10000원</div>
         </div>
-        <button type="button">결제 하기</button>
+        <button type="button" id ="pay">결제 하기</button>
       </div>
     </div>
   </main>
 
   <footer>
-    <iframe src="/frontend/footer/footer.html" height="205px" width="100%"></iframe>
+    <iframe src="/frontend/footer.html" height="137px" width="100%"></iframe>
   </footer>
 </body>
 </html>
