@@ -11,17 +11,7 @@
 <body>
   <div id="root">
     <div class="root-container">
-      <header class="header">
-        <div class="logo"><span>UniBridge</span></div>
-        <ul class="nav-container">
-          <li class="nav-report">공지사항</li>
-          <li class="nav-notice">게시판</li>
-          <li class="nav-lr-report">학습보고서</li>
-          <li class="nav-user-management">유저관리</li>
-          <li class="nav-matching">매칭</li>
-          <li class="nav-logout">로그아웃</li>
-        </li>
-      </header>
+      <div id="header-wrap"></div>
       <div class="content-container">
         <div class="title-container">
           <span>학습보고서</span>
@@ -113,5 +103,15 @@
       </div>
     </div>
   </div>
+  <script>
+    fetch("/frontend/header/adminHeader.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("header-wrap").innerHTML = html;
+        const s = document.createElement("script");
+        s.src = "/frontend/header/adminHeader.js";
+        document.body.appendChild(s);
+      });
+  </script>
 </body>
 </html>
